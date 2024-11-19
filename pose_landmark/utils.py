@@ -1,11 +1,9 @@
-
 import mediapipe as mp
 import pandas as pd
 import numpy as np
 import cv2
 
 # utils.py는 편의성을 제공하는 모듈
-
 mp_pose = mp.solutions.pose
 
 def calculate_angle(a, b, c):
@@ -54,13 +52,14 @@ def detection_body_parts(landmarks):
 
 def score_table(exercise, frame , counter, status, max_counter):
     cv2.putText(frame, "Activity : " + exercise.replace("-", " "),
-                (10, 65), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2,
+                (10, 65), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 0), 2,
                 cv2.LINE_AA)
     cv2.putText(frame, "Counter : " + str(counter), (10, 100),
-                cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2, cv2.LINE_AA)
+                cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 0), 2, cv2.LINE_AA)
     cv2.putText(frame, "Status : " + str(status), (10, 135),
-                cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2, cv2.LINE_AA)
+                cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 0), 2, cv2.LINE_AA)
     cv2.putText(frame, "max counter : " + str(max_counter), (170, 100),
-                cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2, cv2.LINE_AA)
+                cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 0), 2, cv2.LINE_AA)
+    
     return frame
     
